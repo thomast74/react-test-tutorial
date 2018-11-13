@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "test:unit": "mocha --require @babel/register --require ./test/helpers.js --require ./test/dom.js 'src/**/*.spec.js'",
+    "test:unit": "mocha --require @babel/register --require ignore-styles --require ./test/helpers.js --require ./test/dom.js 'src/**/*.spec.js'",
     "test:unit:watch": "npm run test:unit -- --watch"
   },
   "eslintConfig": {
@@ -33,6 +33,7 @@
     "chai": "^4.2.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
+    "ignore-styles": "^5.0.1",
     "jsdom": "^13.0.0",
     "mocha": "^5.2.0",
     "react-hot-loader": "^4.3.11",
