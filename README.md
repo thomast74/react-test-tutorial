@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/thomast74/react-test-tutorial.svg?branch=master) (https://travis-ci.org/thomast74/react-test-tutorial)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
