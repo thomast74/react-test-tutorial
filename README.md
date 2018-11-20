@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/thomast74/react-test-tutorial.svg?branch=master)](https://travis-ci.org/thomast74/react-test-tutorial)
+[![Build Status](https://travis-ci.org/thomast74/react-test-tutorial.svg?branch=master)](https://travis-ci.org/thomast74/react-test-tutorial) [![Coverage Status](https://coveralls.io/repos/github/thomast74/react-test-tutorial/badge.svg?branch=master)](https://coveralls.io/github/thomast74/react-test-tutorial?branch=master)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
