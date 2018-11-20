@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test:unit": "mocha --require @babel/register --require ignore-styles --require ./test/helpers.js --require ./test/dom.js 'src/**/*.spec.js'",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test:snapshot": "jest w--config ./test/jest.config.json",
+    "test:snapshot": "jest --config ./test/jest.config.json",
     "test:snapshot:watch": "npm run test:snapshot -- --watch",
     "test:cypress": "start-server-and-test start http://localhost:8080 cypress",
     "cypress": "cypress run"
