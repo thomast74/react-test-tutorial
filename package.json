@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "test:unit": "mocha --require @babel/register --require ignore-styles --require ./test/helpers.js --require ./test/dom.js 'src/**/*.spec.js'",
+    "test:unit": "nyc mocha --require @babel/register --require ignore-styles --require ./test/helpers.js --require ./test/dom.js 'src/**/*.spec.js'",
     "test:unit:watch": "npm run test:unit -- --watch",
+    "test:unit:coverage": "nyc report --reporter=text-lcov >> ./coverage/lcov-unit.info",
     "test:snapshot": "jest --config ./test/jest.config.json",
     "test:snapshot:watch": "npm run test:snapshot -- --watch",
     "test:cypress": "start-server-and-test start http://localhost:8080 cypress",
     "cypress": "cypress run",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coveralls": "lcov-result-merger 'coverage/lcov*.info' | node node_modules/.bin/coveralls"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,7 +48,9 @@
     "ignore-styles": "^5.0.1",
     "jest": "^23.6.0",
     "jsdom": "^13.0.0",
+    "lcov-result-merger": "^3.1.0",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "react-hot-loader": "^4.3.11",
     "react-test-renderer": "^16.6.3",
     "sinon": "^7.1.1",
@@ -56,5 +59,13 @@
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js",
+      "build",
+      "test"
+    ],
+    "report-dir": "./coverage"
   }
 }
